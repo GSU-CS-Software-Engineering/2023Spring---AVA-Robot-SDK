@@ -1,0 +1,721 @@
+{
+	"info": {
+		"_postman_id": "ed3f4efb-3cf5-4d9d-a572-319ec95f1a49",
+		"name": "AVA Robot REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23794987"
+	},
+	"item": [
+		{
+			"name": "Admin Functions",
+			"item": [
+				{
+					"name": "Data Base Functions",
+					"item": [
+						{
+							"name": "Floor",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"db\": \"{{db}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/db/floor/get",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"db",
+										"floor",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Map Info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"db\": \"{{db}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/db/map/info",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"db",
+										"map",
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Map Image",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/db/map/image?db={{db}}&mapId={{mapId}}",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"db",
+										"map",
+										"image"
+									],
+									"query": [
+										{
+											"key": "db",
+											"value": "{{db}}"
+										},
+										{
+											"key": "mapId",
+											"value": "{{mapId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Robot",
+					"item": [
+						{
+							"name": "Info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/robot/info",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"robot",
+										"info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authenticated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/authenticated",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"authenticated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restart OS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/robotmaint/restart",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"htproxy",
+								"WebDrive",
+								"{{robot}}",
+								"robot",
+								"robotmaint",
+								"restart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Functions",
+			"item": [
+				{
+					"name": "Robot Functions",
+					"item": [
+						{
+							"name": "Info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/robot/info",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"robot",
+										"info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Health",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/health",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"health"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Health (Charging)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/health",
+											"host": [
+												"{{base}}"
+											],
+											"path": [
+												"htproxy",
+												"WebDrive",
+												"{{robot}}",
+												"robot",
+												"health"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.14.0"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 06 Oct 2022 02:37:00 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1767"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "DNT,Authorization,Keep-Alive,User-Agent,Origin,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,Accept"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "DNT,Authorization,Keep-Alive,User-Agent,Origin,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,Accept"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"overallHealth\": \"OK\",\n    \"health\": {\n        \"BaseBoard\": \"OK\",\n        \"DriveMotors\": \"OK\",\n        \"FMRApplication\": \"OK\",\n        \"IMU\": \"OK\",\n        \"Laser\": \"OK\",\n        \"PanControl\": \"OK\",\n        \"PrimeSense1\": \"OK\",\n        \"PrimeSense2\": \"OK\",\n        \"PrimeSense3\": \"OK\"\n    },\n    \"detail\": {\n        \"BaseBoard\": \"OK\",\n        \"IMU\": \"Running\",\n        \"Laser\": \"Reading\",\n        \"DriveMotors\": \"Drive status 1:\\n    Axis A: Non sinusoidal commutation;\\n    Axis B: Non sinusoidal commutation;\\n    Axis C: Non sinusoidal commutation;\\n    Axis D: Non sinusoidal commutation\\nDrive status 2:\\n    Axis A: Zero Velocity, At Command;\\n    Axis B: Zero Velocity, At Command;\\n    Axis C: Zero Velocity, At Command;\\n    Axis D: Zero Velocity, At Command\",\n        \"PrimeSense1\": \"Running\",\n        \"PrimeSense2\": \"Running\",\n        \"PrimeSense3\": \"Running\",\n        \"PanControl\": \"Running\",\n        \"FMRApplication\": \"BehaviorEngine OK\"\n    },\n    \"batteryCharge\": \"84.56409\",\n    \"PowerStatus\": {\n        \"12V_PowerOnBit\": \"1\",\n        \"BusCurrent\": \"2.482096\",\n        \"BusVoltage\": \"35.5521\",\n        \"ButtonLongPressBit\": \"1\",\n        \"ButtonPressedBit\": \"0\",\n        \"CPUCurrent\": \"1.483765\",\n        \"CPUPowerFaultBit\": \"0\",\n        \"CPUPowerGoodBit\": \"1\",\n        \"CPUPowerOnBit\": \"1\",\n        \"CordSenseBit\": \"0\",\n        \"DockSenseBit\": \"1\",\n        \"Estop\": \"0\",\n        \"MotorCurrent\": \"0.01678467\",\n        \"MotorPowerFaultBit\": \"0\",\n        \"MotorPowerGoodBit\": \"1\",\n        \"MotorPowerOnBit\": \"1\",\n        \"PayloadCurrent\": \"0.003356934\",\n        \"PayloadPowerFaultBit\": \"0\",\n        \"PayloadPowerGoodBit\": \"1\",\n        \"PayloadPowerOnBit\": \"1\",\n        \"PowerStateMachine\": \"2\",\n        \"SpeakerEnabledBit\": \"1\"\n    }\n}"
+								},
+								{
+									"name": "Health (Not Charging)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/health",
+											"host": [
+												"{{base}}"
+											],
+											"path": [
+												"htproxy",
+												"WebDrive",
+												"{{robot}}",
+												"robot",
+												"health"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.14.0"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 06 Oct 2022 02:37:46 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1768"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, DELETE"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "DNT,Authorization,Keep-Alive,User-Agent,Origin,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,Accept"
+										},
+										{
+											"key": "Access-Control-Expose-Headers",
+											"value": "DNT,Authorization,Keep-Alive,User-Agent,Origin,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range,Accept"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"overallHealth\": \"OK\",\n    \"health\": {\n        \"BaseBoard\": \"OK\",\n        \"DriveMotors\": \"OK\",\n        \"FMRApplication\": \"OK\",\n        \"IMU\": \"OK\",\n        \"Laser\": \"OK\",\n        \"PanControl\": \"OK\",\n        \"PrimeSense1\": \"OK\",\n        \"PrimeSense2\": \"OK\",\n        \"PrimeSense3\": \"OK\"\n    },\n    \"detail\": {\n        \"BaseBoard\": \"OK\",\n        \"IMU\": \"Running\",\n        \"Laser\": \"Reading\",\n        \"DriveMotors\": \"Drive status 1:\\n    Axis A: Non sinusoidal commutation;\\n    Axis B: Non sinusoidal commutation;\\n    Axis C: Non sinusoidal commutation;\\n    Axis D: Non sinusoidal commutation\\nDrive status 2:\\n    Axis A: Zero Velocity, At Command;\\n    Axis B: Zero Velocity, At Command;\\n    Axis C: Zero Velocity, At Command;\\n    Axis D: Zero Velocity, At Command\",\n        \"PrimeSense1\": \"Running\",\n        \"PrimeSense2\": \"Running\",\n        \"PrimeSense3\": \"Running\",\n        \"PanControl\": \"Running\",\n        \"FMRApplication\": \"BehaviorEngine OK\"\n    },\n    \"batteryCharge\": \"85.10455\",\n    \"PowerStatus\": {\n        \"12V_PowerOnBit\": \"1\",\n        \"BusCurrent\": \"2.929688\",\n        \"BusVoltage\": \"31.12603\",\n        \"ButtonLongPressBit\": \"0\",\n        \"ButtonPressedBit\": \"0\",\n        \"CPUCurrent\": \"2.044373\",\n        \"CPUPowerFaultBit\": \"0\",\n        \"CPUPowerGoodBit\": \"1\",\n        \"CPUPowerOnBit\": \"1\",\n        \"CordSenseBit\": \"0\",\n        \"DockSenseBit\": \"0\",\n        \"Estop\": \"0\",\n        \"MotorCurrent\": \"0.01678467\",\n        \"MotorPowerFaultBit\": \"0\",\n        \"MotorPowerGoodBit\": \"1\",\n        \"MotorPowerOnBit\": \"1\",\n        \"PayloadCurrent\": \"0.003356934\",\n        \"PayloadPowerFaultBit\": \"0\",\n        \"PayloadPowerGoodBit\": \"1\",\n        \"PayloadPowerOnBit\": \"1\",\n        \"PowerStateMachine\": \"2\",\n        \"SpeakerEnabledBit\": \"1\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Drive To Tag",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/drive/driveToTag/{{mapId}}/1",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"drive",
+										"driveToTag",
+										"{{mapId}}",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tags",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/annotation/tags/{{mapId}}",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"annotation",
+										"tags",
+										"{{mapId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Undock",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive//{{robot}}/robot/dock/undock",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"",
+										"{{robot}}",
+										"robot",
+										"dock",
+										"undock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Dock (Must be close)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/dock/dock",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"dock",
+										"dock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Dock Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/dock/status",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"dock",
+										"status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Download Database",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/mapping/download/GSU_ERB_3rd_220916.db",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"mapping",
+										"download",
+										"GSU_ERB_3rd_220916.db"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Battery Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive//{{robot}}/robot/batteryStatus",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"",
+										"{{robot}}",
+										"robot",
+										"batteryStatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Lights",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"duration\": \"10.0\",\n    \"all\": {\n        \"r\": \"00\",\n        \"g\": \"00\",\n        \"b\": \"200\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/misc/lights",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"misc",
+										"lights"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LPS Snapshot",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/mapping/lps",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"mapping",
+										"lps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Camera Snapshot",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/camera/top",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"camera",
+										"top"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Camera Streaming",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/streaming/camera/top/10",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"streaming",
+										"camera",
+										"top",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Drive Velocity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"translate\": 10.0,\n    \"rotate\": 1.0,\n    \"duration\": 20.0,\n    \"nudge\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/htproxy/WebDrive/{{robot}}/robot/drive/velocity",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"htproxy",
+										"WebDrive",
+										"{{robot}}",
+										"robot",
+										"drive",
+										"velocity"
+									],
+									"query": [
+										{
+											"key": "translate",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "ABC901015251",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "vb04563@georgiasouthern.edu",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "https://jtektdev.ava8.net/api",
+			"type": "string"
+		},
+		{
+			"key": "db",
+			"value": "GSU_ERB_3rd_220916",
+			"type": "string"
+		},
+		{
+			"key": "mapId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "robot",
+			"value": "BA00140",
+			"type": "string"
+		},
+		{
+			"key": "chargingDockTagID",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}

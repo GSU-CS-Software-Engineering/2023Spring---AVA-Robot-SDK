@@ -1,0 +1,2 @@
+We will begin writing the library for the AVA robot in Python so we can test it out to see if it works. We want the library to be easy to understand and easy to use. This should be helpful to whoever is using the SDK.
+Acceptance Criteria: All methods should work as intended, All methods should be easy to understand, there should be no errors when we run any of the code.
